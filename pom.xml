@@ -6,6 +6,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>springcloud-demo</module>
+    <module>spring-cloud-consul-demo</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>

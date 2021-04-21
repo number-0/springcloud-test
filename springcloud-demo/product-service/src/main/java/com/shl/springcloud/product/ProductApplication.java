@@ -7,10 +7,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EntityScan("cn.itcast.product.entity")
-//激活eurekaClient
+@EntityScan("com.shl.springcloud.product.entity")
+//激活eurekaClient  以下两个注解在最新版本的springcloud中可以省略
 //@EnableEurekaClient
-//@EnableDiscoveryClient
+//@EnableDiscoveryClient  //@EnableDiscoveryClient包含@EnableEurekaClient
 public class ProductApplication {
 
 	public static void main(String[] args) {

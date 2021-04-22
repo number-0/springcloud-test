@@ -29,11 +29,14 @@ eureka:
 #    root: debug
 
 #修改ribbon的负载均衡策略   服务名 -  ribbon - NFLoadBalancerRuleClassName : 策略
-#service-product:
-#  ribbon:
-#    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-#    ConnectTimeout: 250 # Ribbon的连接超时时间
-#    ReadTimeout: 1000 # Ribbon的数据读取超时时间
-#    OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
-#    MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
-#    MaxAutoRetries: 1 # 对当前实例的重试次数
+service-product:
+  ribbon:
+    # 复制均衡策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+    # 请求重试：需要引入spring-retry依赖
+    ConnectTimeout: 250 # Ribbon的连接超时时间
+    ReadTimeout: 1000 # Ribbon的数据读取超时时间
+    OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
+    MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
+    MaxAutoRetries: 1 # 对当前实例的重试次数

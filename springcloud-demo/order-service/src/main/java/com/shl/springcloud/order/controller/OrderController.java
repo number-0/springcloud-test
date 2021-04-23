@@ -1,6 +1,8 @@
 package com.shl.springcloud.order.controller;
 
 import com.shl.springcloud.order.entity.Product;
+import com.shl.springcloud.order.feign.ProductFeignClient;
+import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -30,17 +32,30 @@ public class OrderController {
 	private DiscoveryClient discoveryClient;
 
 
+	@Resource
+	private ProductFeignClient productFeignClient;
+
+	/**
+	 * 基于feign的形式调用远程微服务
+	 */
+	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
+	public Product findById(@PathVariable Long id) {
+		Product product = null;
+		product = productFeignClient.findById(id);
+		return product;
+	}
+
 	/**
 	 * 基于ribbon的形式调用远程微服务
 	 *  1.使用@LoadBalanced声明RestTemplate
 	 *  2.使用服务名称替换ip地址
 	 */
-	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
-	public Product findById(@PathVariable Long id) {
-		Product product = null;
-		product = restTemplate.getForObject("http://service-product/product/1",Product.class);
-		return product;
-	}
+//	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
+//	public Product findById(@PathVariable Long id) {
+//		Product product = null;
+//		product = restTemplate.getForObject("http://service-product/product/1",Product.class);
+//		return product;
+//	}
 
 	/**
 	 * 参数:商品id

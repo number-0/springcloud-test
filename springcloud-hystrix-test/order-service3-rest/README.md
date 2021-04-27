@@ -1,0 +1,1 @@
+## hystrix对RestTemplate的支持

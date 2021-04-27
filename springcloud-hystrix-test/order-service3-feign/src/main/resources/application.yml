@@ -52,6 +52,8 @@ feign:
   #开启对hystrix的支持
   hystrix:
     enabled: true
+
+# 暴露hystrix对外提供的端点，如果不暴露无法通过actuator监控页面访问http://localhost:9001/actuator/hystrix.stream
 management:
   endpoints:
     web:

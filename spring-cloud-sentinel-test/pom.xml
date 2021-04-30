@@ -9,15 +9,13 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>springcloud-hystrix-test</artifactId>
+  <artifactId>spring-cloud-sentinel-test</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>order-service3</module>
-    <module>eureka-server3</module>
-    <module>order-service3-rest</module>
-    <module>order-service3-feign</module>
-    <module>product-server3</module>
-    <module>hystrix-turbine</module>
+    <module>eureka-server4</module>
+    <module>order-service4-feign</module>
+    <module>order-service4-rest</module>
+    <module>product-service4</module>
   </modules>
 
   <properties>
@@ -55,6 +53,13 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
         <version>Greenwich.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.1.0.RELEASE</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

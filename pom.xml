@@ -8,6 +8,7 @@
     <module>springcloud-demo</module>
     <module>spring-cloud-consul-demo</module>
     <module>springcloud-hystrix-test</module>
+    <module>spring-cloud-sentinel-test</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>

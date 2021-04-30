@@ -17,6 +17,7 @@
     <module>order-service3-rest</module>
     <module>order-service3-feign</module>
     <module>product-server3</module>
+    <module>hystrix-turbine</module>
   </modules>
 
   <properties>

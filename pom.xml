@@ -9,6 +9,7 @@
     <module>spring-cloud-consul-demo</module>
     <module>springcloud-hystrix-test</module>
     <module>spring-cloud-sentinel-test</module>
+    <module>spring-cloud-gateway-test</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
